@@ -19,5 +19,11 @@ def first_word(word)
 end
 
 def titleize(str)
-	word.split(" ").map
+	str.split.map.with_index do |word, i|
+		if (word == "and" || word == "the") && i != 0
+			word
+		else
+			word.capitalize
+		end
+	end.join(" ")
 end
